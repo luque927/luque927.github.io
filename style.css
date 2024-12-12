@@ -1,0 +1,850 @@
+:root {
+  --primary-color: #004265;
+  --accent-color: #00a987;
+  --social-icon-bg: #00a987;
+  --white: #ffffff;
+  --dark: #333333;
+  --header-height: 60px;
+  --nav-height: 80px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+/*--------------------------------------------------------------*/
+/* Estilos de barra superior numero y linkeo */
+.top-bar {
+  background-color: var(--primary-color);
+  color: var(--white);
+  height: var(--header-height);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.top-bar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.phone-number {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.875rem;
+}
+
+/* Estilo de iconos */
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: var(--social-icon-bg);
+  border-radius: 50%;
+  color: var(--white);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 209, 178, 0.4);
+}
+
+.social-icon i {
+  font-size: 0.875rem;
+}
+
+/*--------------------------------------------------------------*/
+/* Principales estilos de navegación */
+.nav-header {
+  background: var(--white);
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.logo {
+  width: 140px;
+  height: auto;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 3rem;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.nav-menu a:hover {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+}
+
+/* Ajuste del contenido principal*/
+main {
+  padding-top: calc(var(--header-height) + var(--nav-height));
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-header {
+    padding: 0 1rem;
+  }
+  .nav-menu {
+    gap: 1.5rem;
+  }
+  .nav-menu a {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+  }
+  .phone-number span {
+    display: none;
+  }
+  .social-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .social-icon i {
+    font-size: 0.75rem;
+  }
+}
+
+/*Para que el menu se mantenga sin moverse al navegar*/
+body {
+  padding-top: 150px;
+
+/*--------------------------------------------------------------*/
+  /*  Section sobre nosotros */
+  .about {
+    padding: 40px 50px;
+    display: flex;
+    gap: 50px;
+  }
+}
+
+.about-image {
+  flex: 1;
+  background: linear-gradient(rgba(104, 205, 212, 0.137), rgba(24, 52, 105, 0.075)),
+    url("./imagenes/fotos/sobrenosotros1.jpg");
+  background-size: 330px;
+  height: 350px;
+  background-repeat: no-repeat;
+  background-position: right;
+
+}
+
+.about-content {
+  flex: 1;
+  padding: 20px 0;
+}
+
+.about-content h2 {
+  color: var(--accent-color);
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  color: var(--primary-color);
+  line-height: 1.6;
+}
+.header {
+  font-size: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  letter-spacing: -0.3px;
+  color: #004164;
+  margin: 0;
+  padding: 30px 0;
+  position: relative;
+  text-align: center;
+}
+
+.header:before, .header:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 480px;
+  height: 2px;
+  background-color: #00a88c;
+}
+
+.header:before {
+  left: 100px;
+}
+
+.header:after {
+  right: 100px;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  padding: 30px 0 30px 0;
+}
+
+.category {
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0 20px;
+  
+}
+
+.category img {
+  width: 280px;
+  height: 380px;
+  object-fit: cover;
+}
+
+
+@media (max-width: 600px) {
+  .categories {
+      flex-direction: column;
+      gap: 15px;
+  }
+
+  .category {
+      width: 100%;
+  }
+}
+
+/*--------------------------------------------------------------*/
+/* iniciooo*/
+.hero {
+  height: 500px;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("./imagenes/estilo\ con\ alma\ de\ algodón\ _Mesa\ de\ trabajo\ 1.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  max-width: 600px;
+}
+
+/*--------------------------------------------------------------*/
+/* Footer :pie de pagina */
+
+footer {
+  background-color: #004265;
+  color: white;
+  padding: 3rem 0;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.footer-logo {
+  max-width: 180px;
+  height: auto;
+}
+
+.footer-tagline {
+  font-size: 1rem;
+  margin: 0;
+  color: white;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.social-icon {
+  width: 35px;
+  height: 35px;
+  background-color: #00bf8f;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.footer-address {
+  color: white;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.footer-address p {
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-links h3 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ccc;
+}
+
+/* Responsive  */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .footer-info {
+    align-items: center;
+  }
+  .footer-links {
+    align-items: center;
+  }
+}
+
+/*--------------------------------------------------------------*/
+/* acerca de*/
+.about-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 35px 10px;
+  font-family: Arial, sans-serif;
+}
+
+.cotton-image {
+  width: 1200px;
+  height: 500px;
+  object-fit: cover;
+  margin-bottom: 50px;
+  border-radius: 15px;
+}
+
+.mission-vision-container {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.mission-box,
+.vision-box {
+  flex: 1;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.section-content {
+  color: var(--primary-color);
+  line-height: 1.6;
+  text-align: center;
+  font-size: 16px;
+}
+
+.values-section {
+  padding: 15PX 0 ;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.values-title {
+  padding: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--accent-color);
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.values-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+.values-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.value-item {
+  background-color: var(--primary-color);
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-size: 16px;
+  color: var(--white);
+  transition: all 0.3s ease;
+}
+
+.value-item:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-3px);
+}
+
+.center-values {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+  .mission-vision-container {
+    flex-direction: column;
+  }
+
+  .values-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .value-item {
+    width: 80%;
+  }
+}
+
+/*--------------------------------------------------------------*/
+/* apartado de blog*/
+.cotton-care-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  font-family: Arial, sans-serif;
+  color: var(--primary-color)
+}
+
+.section-container {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 60px;
+  align-items: flex-start;
+}
+
+.text-content {
+  flex: 1;
+}
+
+.image-container {
+  flex: 1;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.image-container img {
+  width: 480px;
+  height: 480px;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+h2 {
+  font-size: 24px;
+  color: var(--accent-color);
+  margin-bottom: 25px;
+}
+
+  .text-content{
+    background-color: #ecf6fa;
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 40px;
+  }
+.care-instructions {
+  margin-bottom: 20px;
+}
+
+.care-instructions p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.why-cotton {
+  margin-bottom: 40px;
+}
+
+.cotton-benefits {
+  margin-top: 15px;
+}
+
+.benefit-item {
+  margin-bottom: 15px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.benefit-item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+.benefit-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.did-you-know {
+  background-color: #ecf6fa;
+  padding: 30px;
+  border-radius: 15px;
+  margin-top: 40px;
+}
+
+.did-you-know h3 {
+  color: var(--accent-color);
+  margin-bottom: 20px;
+}
+
+.did-you-know p {
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .section-container {
+    flex-direction: column;
+  }
+
+  .image-container {
+    min-height: 200px;
+  }
+}
+
+/*--------------------------------------------------------------*/
+/* apartado de productos */
+.products-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-content: center;
+}
+
+.product-card {
+  background-color: #ecf3f8;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%;
+  height: 290px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 260px;
+  height: 275px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.product-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.product-details {
+  font-size: 14px;
+  color: var(--primary-color);
+  line-height: 1.4;
+}
+
+.product-size {
+  margin-bottom: 5px;
+}
+
+.product-variety {
+  font-style: italic;
+}
+
+@media (max-width: 992px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+}
+
+/*formulario*/
+
+/* Contenedor principal del formulario */
+.container {
+  /* Centrado horizontal y márgenes automáticos */
+  margin: 50px auto;
+  display: flex;
+  max-width: 1000px;
+  padding: 40px;
+  gap: 50px;
+  align-items: center;
+  /* Sombra suave para destacar el contenedor */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background-color: var(--accent-color);
+}
+
+/* Sección de la ilustración */
+.illustration {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.illustration img {
+  width: 100%;
+  max-width: 400px;
+  /* Animación suave al cargar la imagen */
+  transition: transform 0.3s ease;
+}
+
+.illustration img:hover {
+  transform: scale(1.05);
+}
+
+/* Contenedor del formulario */
+.form-container {
+  flex: 1;
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  /* Sombra más pronunciada para el formulario */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Título del formulario */
+.form-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #004265;
+  /* Eliminamos el subrayado y agregamos un decorador inferior */
+  text-decoration: none;
+  position: relative;
+}
+
+/* Línea decorativa debajo del título */
+.form-container h1::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: #00bf8f;
+}
+
+/* Grupos de campos del formulario */
+.form-group {
+  margin-bottom: 25px;
+}
+
+/* Etiquetas de los campos */
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+/* Estilos para los campos de entrada */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover en los campos */
+.form-group input:hover,
+.form-group textarea:hover {
+  border-color: #00bf8f;
+}
+
+/* Efecto focus en los campos */
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #00bf8f;
+  box-shadow: 0 0 0 3px rgba(0, 191, 143, 0.2);
+}
+
+/* Área de texto para comentarios */
+.form-group textarea {
+  height: 120px;
+  resize: vertical;
+  min-height: 100px;
+  max-height: 200px;
+}
+
+/* Botón de envío */
+button {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  background-color: #004265;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover en el botón */
+button:hover {
+  background-color: #00bf8f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 191, 143, 0.4);
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+    margin: 20px;
+  }
+
+  /* En móviles mantenemos la ilustración pero más pequeña */
+  .illustration {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  .illustration img {
+    max-width: 250px;
+  }
+
+  .form-container {
+    padding: 25px;
+  }
+}
